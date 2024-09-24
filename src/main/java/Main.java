@@ -10,8 +10,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -50,7 +48,7 @@ public class Main {
         System.out.println("\nОтфильтрованный список по upvotes:");
         // отфильтровать список и вывод на экран
         cats.stream()
-                .filter(cat -> cat.getUpvotes() != null)
+                .filter(cat -> cat.upvotes() != null)
                 .forEach(System.out::println);
     }
 }

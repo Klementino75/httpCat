@@ -2,13 +2,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Cat {
-    private final String id;
-    private final String text;
-    private final String type;
-    private final String user;
-    private final String upvotes;
-
+public record Cat(String id, String text, String type, String user, String upvotes) {
     public Cat(@JsonProperty("id") String id,
                @JsonProperty("text") String text,
                @JsonProperty("type") String type,
@@ -20,26 +14,6 @@ public class Cat {
         this.type = type;
         this.user = user;
         this.upvotes = upvotes;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public String getUpvotes() {
-        return upvotes;
     }
 
     @Override
